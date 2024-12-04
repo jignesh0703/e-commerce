@@ -35,7 +35,7 @@ const Banners = () => {
             <div className='w-full flex justify-center items-center mt-2'>
                 <div className='w-[80%] bg-white'>
                     <div className='w-[100%]'>
-                        <img src={banners[banner]} alt="banners" className='w-[100%] h-[15rem]' />
+                        <img src={banners[banner]} alt="banners" className='w-[100%] h-[10rem] sm:h-[15rem]' />
                     </div>
                 </div>
                 <div className='absolute flex justify-between w-[80%] bg-transparent'>

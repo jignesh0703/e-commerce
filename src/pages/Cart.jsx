@@ -4,6 +4,7 @@ import red_minus from '../assets/remove_red.png'
 import green_plus from '../assets/add_icon_green.png'
 import { FaStar } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { product, cart, addToCart, removeFromCart , removeall } = useContext(StoreContext);
@@ -40,27 +41,31 @@ const Cart = () => {
               {
                 Cartfilter.map((item, index) => (
                   <div key={index}>
-                    <div className='bg-white flex p-2 py-8 border border-slate-200 justify-center '>
-                      <div className='bg-white'>
-                        <img src={item.img[0]} alt="image" className="w-[8rem] ml-[5rem]" />
+                    <div className='bg-white sm:flex p-2 py-8 border border-slate-200 justify-center'>
+                    <Link to={`/product/${item.id}`}>
+                      <div className='bg-white flex justify-center'>
+                        <img src={item.img[0]} alt="image" className="w-[8rem] md:ml-[5rem]" />
                       </div>
-                      <div className='bg-white ml-8'>
+                      </Link>
+                      <div className='bg-white ml-4 sm:ml-8'>
                         <div className='bg-white'>
-                          <p className='text-[1.5rem] bg-white font-medium w-[40rem]'>{item.name}</p>
+                        <Link to={`/product/${item.id}`}>
+                          <p className='text-[1.5rem] bg-white font-medium sm:w-[12rem] md:w-[17rem] lg:w-[25rem] xl:w-[40rem] mt-2 sm:mt-0'>{item.name}</p>
+                          </Link>
                           <p className='mt-2 bg-[#388e3c] w-max flex justify-center items-center text-white font-bold py-[0.2rem] px-[0.4rem] text-[0.8rem] gap-1 rounded-[3px]'>{item.rating}<FaStar className='bg-transparent text-[white]' /></p>
-                          <div className='bg-white flex gap-4 justify-center items-center w-max mt-6'>
-                            <p className='bg-white text-[2rem] font-medium'>₹{item.old_price * cart[item.id]}</p>
-                            <p className='bg-white text-[1.5rem] font-medium line-through text-[#555555]'>₹{item.new_price * cart[item.id]}</p>
-                            <p className='bg-white text-[#388e3c] font-medium text-[1.3rem]'>{item.offer}% off</p>
+                          <div className='bg-white flex gap-4 justify-center items-center w-max mt-2 sm:mt-6'>
+                            <p className='bg-white text-[1.5rem] sm:text-[2rem] font-medium'>₹{item.old_price * cart[item.id]}</p>
+                            <p className='bg-white text-[1.2rem] sm:text-[1.5rem] font-medium line-through text-[#555555]'>₹{item.new_price * cart[item.id]}</p>
+                            <p className='bg-white text-[#388e3c] font-medium text-[1rem] sm:text-[1.3rem]'>{item.offer}% off</p>
                           </div>
-                          <div className='flex bg-white gap-[10px] items-center ml-[-10rem] mt-[2rem]'>
+                          <div className='flex bg-white gap-[10px] items-center justify-center sm:justify-start sm:ml-[-10rem] sm:mt-0 md:mt-2 xl:mt-[2rem]'>
                             <img src={red_minus} onClick={() => HandleRemoveCart(item.id)} alt="minus_icon" className='w-[30px] cursor-pointer rounded-full' />
                             <p className='font-bold bg-white border border-slate-300 py-1 px-4'>{cart[item.id]}</p>
                             <img src={green_plus} onClick={() => HandleAddToCart(item.id)} alt="plus_icon" className='w-[30px] cursor-pointer rounded-full' />
                           </div>
                         </div>
                       </div>
-                      <div className='bg-white'>
+                      <div className='bg-white sm:static absolute mt-[-25rem] ml-[65%] sm:mt-0 sm:ml-0'>
                         <MdDelete
                           onClick={() => HandleremoveAll(item.id)}  // Trigger remove from wishlist
                           className="bg-white text-[1.5rem] text-[#555555] cursor-pointer"

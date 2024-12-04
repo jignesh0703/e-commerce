@@ -89,7 +89,7 @@ const Signup_Login = ({ setshowlogin }) => {
                 <input type="checkbox" required className='mt-[6px] cursor-pointer bg-white' />
                 <p className='ml-2 tracking-wide bg-white'>By Continuing. I agree to the terms of use & privacy policy.</p>
               </div>
-              <div className='w-[24rem] ml-[1rem] mt-6 bg-white'>
+              <div className='ml-[1rem] mt-6 bg-white w-max'>
                 {state === "Sign Up"
                   ? <h1 className='bg-white'>Already have an account? <span onClick={() => setState("Login")} className='text-[#006aaf] ml-1 cursor-pointer font-bold bg-white'>Login here</span></h1>
                   : <h1 className='bg-white'>Create a new account? <span onClick={() => setState("Sign Up")} className='text-[#006aaf] ml-1 cursor-pointer font-bold bg-white'>Click here</span></h1>}

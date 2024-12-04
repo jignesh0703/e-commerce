@@ -4,12 +4,12 @@ import { StoreContext } from '../context/Context'
 
 const All_product = ({category_filter}) => {
 
-  const { product } = useContext(StoreContext)
+  const { product,SearchCheker } = useContext(StoreContext)
 
   return (
     <>
       <div className='w-[100%] mt-4 flex justify-center'>
-        <p className='w-[80%] flex bg-white font-semibold pl-[10rem] text-2xl pt-4 pb-4'>All Products</p>
+        <p className='w-[80%] flex bg-white font-semibold pl-[10%] text-2xl pt-4 pb-4'>All Products</p>
       </div>
       <div className='w-[100%] flex justify-center items-center mb-[5rem]'>
         <div className='w-[80%] bg-white flex gap-8 flex-wrap justify-center'>

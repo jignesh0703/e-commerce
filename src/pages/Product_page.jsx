@@ -40,7 +40,7 @@ const ProductDetail = () => {
     <div className='w-[100%] flex justify-center'>
       <div className='w-[80%] bg-white mt-2 flex'>
         <div className='border-[1px] border-slate-200 flex mt-2 ml-4'>
-          <div className='flex flex-col gap-1 bg-white h-[25rem] overflow-hidden overflow-y-auto scroll w-max'>
+          <div className='flex flex-col gap-1 bg-white h-[19rem] xl:h-[25rem] overflow-hidden overflow-y-auto scroll w-max'>
             {
               selectedProduct.img.map((image, index) => {
                 return <div className={`border-[1px] border-slate-200 flex justify-center items-center bg-white p-1 cursor-pointer ${imageindex === index ? 'border-2 border-blue-600' : ''}`} key={index} onClick={() => handleImageClick(index)} >
@@ -49,16 +49,16 @@ const ProductDetail = () => {
               })
             }
           </div>
-          <div className='h-[25rem] w-[22rem] flex justify-center items-center bg-white'>
-            <img src={MainPhoto} alt="" className='w-[20rem] h-[23rem] overflow-hidden object-fill' />
+          <div className='w-[17rem] h-[20rem] xl:h-[25rem] xl:w-[22rem] flex justify-center items-center bg-white'>
+            <img src={MainPhoto} alt="" className='w-[15rem] h-[18rem] xl:w-[20rem] xl:h-[23rem] overflow-hidden object-fill' />
           </div>
-          <div className='absolute w-[3rem] h-[3rem] ml-[21rem] mt-[1.5rem] flex justify-center items-center rounded-full overflow-hidden' onClick={handleHeartClick}>
+          <div className='absolute w-[3rem] h-[3rem] ml-[16.5rem] xl:ml-[21rem] mt-4 xl:mt-[1.5rem] flex justify-center items-center rounded-full overflow-hidden' onClick={handleHeartClick}>
             <FaHeart className={`text-[1.5rem] cursor-pointer bg-transparent ${change_heart[id] ? 'text-red-500' : 'text-slate-300'}`}/>
           </div>
         </div>
         <div className='bg-white mt-6 ml-8'>
           <div className='bg-white'>
-            <p className='text-[1.5rem] bg-white font-medium w-[40rem]'>{selectedProduct.name}</p>
+            <p className='text-[1.5rem] bg-white font-medium xl:w-[40rem]'>{selectedProduct.name}</p>
             <p className='mt-2 bg-[#388e3c] w-max flex justify-center items-center text-white font-bold py-[0.2rem] px-[0.4rem] text-[0.8rem] gap-1 rounded-[3px]'>{selectedProduct.rating}<FaStar className='bg-transparent text-[white]' /></p>
             <div className='bg-white flex gap-4 justify-center items-center w-max mt-2'>
               <p className='bg-white text-[2rem] font-medium'>₹{selectedProduct.old_price}</p>

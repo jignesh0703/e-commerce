@@ -12,7 +12,7 @@ const All_product = ({category_filter}) => {
         <p className='w-[80%] flex bg-white font-semibold pl-[10%] text-2xl pt-4 pb-4'>All Products</p>
       </div>
       <div className='w-[100%] flex justify-center items-center mb-[5rem]'>
-        <div className='w-[80%] bg-white flex gap-8 flex-wrap justify-center'>
+        <div className='w-[90%] sm:w-[80%] bg-white flex gap-8 flex-wrap justify-center'>
           {
             product.map(
               (item,index)=>{
